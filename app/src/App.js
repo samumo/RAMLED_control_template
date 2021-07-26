@@ -28,7 +28,6 @@ class App extends React.Component {
     fetch('http://192.168.8.104:8080/api/v1.0/set_name_mask', {
       "method": "POST",
       "headers": {
-        "mode": "cors", 
         "Content-type": "application/json",
         "Accept": "text/plain"
       },
@@ -44,6 +43,9 @@ class App extends React.Component {
       console.log(response)
     })
     .catch(err => {
+      this.setState({
+        ApiResponse: err
+      })
       console.log(err);
     });
   }
