@@ -20,40 +20,9 @@ class App extends React.Component {
     this.test = this.test.bind(this);
   }
   
-  // test(e) {
-  //   e.preventDefault();
-    
-  //   let uri = "http://192.168.8.104:8080/api/v1.0/set_name_mask";
-  //   let res = encodeURI(uri);
-  //   console.log(JSON.stringify({"name_mask":["A1"],"fade": 0.3,"timeout":2}));
-  //   fetch(res, {
-  //     "method": "POST",
-  //     "headers": {
-  //       // "content-type": 'application/json',
-  //       // "accept": "text/plain",
-  //       // "Accept": "/",
-  //       // 'mode': 'cors'
-  //     },
-  //     "body": JSON.stringify({"name_mask":["A1"],"fade": 0.3,"timeout":2})
-  //   })
-  //   .then(response => response.json())
-  //   .then(response => {
-  //     this.setState({
-  //       ApiResponse: response
-  //     });
-  //     console.log(response)
-  //   })
-  //   .catch(err => {
-  //     // this.setState({
-  //     //   ApiResponse: err
-  //     // })
-  //     console.log(err);
-  //   });
-  // }
-
   test(e) {
-    const jsonData = JSON.stringify({"name_mask": ["A1", "A2"], "fade": 0.1, "auto_off": 3});
-    let uri = "http://192.168.8.104:8080/api/v1.0/set_name_mask";
+    const jsonData = JSON.stringify({"name_mask": ["B-01-01", "b-01-02", "J-09-06"], "fade": 0.1, "auto_off": 20});
+    let uri = "http://192.168.8.99:8080/api/v1.0/set_name_mask";
     let res = encodeURI(uri);
     e.preventDefault();
     $.ajax(res, {
